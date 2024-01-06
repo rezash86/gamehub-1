@@ -23,7 +23,8 @@ const GameGrid = () => {
   //     .catch((err) => setError(err.message));
   // });
 
-  const { games, error } = useGames();
+  // const { games, error } = useGames();
+  const { data, error } = useGames();
 
   return (
     <>
@@ -34,7 +35,7 @@ const GameGrid = () => {
         padding="10px"
         spacing={6}
       >
-        {games.map((game) => (
+        {data.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
       </SimpleGrid>
